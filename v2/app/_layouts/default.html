@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>{{ page.title }}</title>
+        <meta name="viewport" content="width=device-width">
+
+
+        <!-- build:css({app,.tmp}) /assets/css/desktop.css -->
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="/assets/css/desktop.css" media="screen and (min-width: 1024px)">
+        <!-- endbuild -->
+
+
+
+
+    </head>
+    <body>
+
+        <header class="site">
+          <div class="header">
+            <h1 class="title"><a href="/">{{ site.name }}</a></h1>
+          </header>
+
+<main class="wrap">
+  <article class="content">
+    <header>
+      <h1>{{ page.title }}</h1>
+      <p>{{ page.lead }}</p>
+    </header>
+    {{ content }}
+    <footer>
+    </footer>
+  </article>
+  <aside class="sidebar"><h2>Sidebar</h2></aside>
+</main>
+
+
+          
+
+          <footer class="footer">
+              <p>
+                JAN<br />
+                <a href="mailto:o@o">o@o</a>
+              </p>
+              <p>
+                <a href="https://github.com/yourusername">github.com/yourusername</a><br />
+                <a href="https://twitter.com/yourusername">twitter.com/yourusername</a><br />
+              </p>
+</footer>
+
+    <!-- build:js(app) /assets/js/scripts.js -->
+    <script src="/assets/js/main.js"></script>
+    <!-- endbuild -->
+    </body>
+</html>

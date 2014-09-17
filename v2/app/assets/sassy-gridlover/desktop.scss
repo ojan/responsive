@@ -1,0 +1,31 @@
+// https://github.com/Pushplaybang/knife
+@import "../../_bower_components/knife/examples/normalize";
+@import "sassy-gridlover";
+
+
+body {
+	@include sassy-gridlover-body($baseFontSize, true);
+}
+
+h1 {
+	@include sassy-gridlover-heading(3, true);
+}
+h2 {
+	@include sassy-gridlover-heading(2, true);
+}
+h3 {
+	@include sassy-gridlover-heading(1, true);
+}
+h4 {
+	@include sassy-gridlover-heading(0, true);
+}
+
+p, ul, ol, pre, table, blockquote {
+	@include sassy-gridlover-margins(true);
+}
+
+.wrap {
+  max-width: 650px;
+  margin: 0 auto;
+  font-family: sans-serif;
+}

@@ -1,0 +1,8 @@
+{
+  "name": "v2",
+  "version": "0.0.0",
+  "dependencies": {
+    "typeplate-starter-kit": "~1.1.4",
+    "knife": "~0.3.2"
+  }
+}

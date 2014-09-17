@@ -1,0 +1,53 @@
+// Screen
+// ======
+
+//@import "grids";
+
+// https://github.com/Team-Sass/modular-scale
+
+// http://compass-style.org/reference/compass/typography/vertical_rhythm/
+
+//@import "modular-scale";
+//@import "compass/typography/vertical_rhythm";
+
+
+// https://github.com/Team-Sass/Singularity
+
+
+//@import "vars-typeplate";
+// https://github.com/Pushplaybang/knife
+@import "../../_bower_components/knife/examples/normalize";
+@import "../../_bower_components/knife/knife";
+
+/* Type Setup */
+$body-font-size:    21px;
+$body-line-height:  1.45;
+$scale-factor:      $perfect-fourth;
+$ie8compatability:  true;
+ 
+html { @include khtml(); }
+body { @include kbody(); }
+
+/* Typography */
+h1,h2,h3,h4,h5,h6 {font-family: serif;}
+h1 { @include ktype(4, 1, 2); }
+h2 { @include ktype(3, 1, 1); }
+h3 { @include ktype(2, 1, 1); }
+h4,
+h5,
+h6 { 
+    @include ktype(0, 1, 0);
+    text-transform: capitalize;
+}
+p, ul, ol,dl {@include ktype(0,0,1);}
+small { 
+  display: inline-block;
+  @include ktype(-1,0,0); 
+}
+
+
+.wrap {
+  max-width: 650px;
+  margin: 0 auto;
+  font-family: sans-serif;
+}

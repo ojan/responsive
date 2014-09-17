@@ -1,0 +1,130 @@
+// Screen
+// ======
+
+//@import "grids";
+
+// https://github.com/Team-Sass/modular-scale
+
+// http://compass-style.org/reference/compass/typography/vertical_rhythm/
+
+// http://breakpoint-sass.com/
+
+// https://github.com/Team-Sass/Singularity
+
+
+//@import "vars-typeplate";
+//@import "../../_bower_components/typeplate-starter-kit/scss/typeplate";
+
+
+// ----
+// Sass (v3.3.4)
+// Compass (v1.0.0.alpha.18)
+// Breakpoint (v2.4.2)
+// Modular Scale (v2.0.4)
+// ----
+
+// Modular Scale
+// =============
+
+@import "modular-scale";
+
+// MS Settings
+$ms-base: 20px; // don't worry, it gets converted to ems
+$ms-ratio: $fourth;
+
+// Small Screen Variables
+$ms-smscr-ratio: $minor-third;
+
+$ms-smscr-norm     : $ms-base;
+$ms-smscr-med      : ms(2, $ms-base, $ms-smscr-ratio);
+$ms-smscr-lrg      : ms(3, $ms-base, $ms-smscr-ratio);
+$ms-smscr-xlrg     : ms(4, $ms-base, $ms-smscr-ratio);
+$ms-smscr-xxlrg    : ms(5, $ms-base, $ms-smscr-ratio);
+$ms-smscr-xxxlrg   : ms(6, $ms-base, $ms-smscr-ratio);
+
+// Default Variables
+$ms-norm     : $ms-base;
+$ms-med      : ms(2);
+$ms-lrg      : ms(3);
+$ms-xlrg     : ms(4);
+$ms-xxlrg    : ms(5);
+$ms-xxxlrg   : ms(6);
+
+// Compass Vertical Rhythym
+// ========================
+
+@import "compass/typography/vertical_rhythm";
+
+// Vertical rhythym settings
+$base-font-size    : $ms-norm;
+$base-line-height  : $ms-med;
+
+// Breakpoint
+// ==========
+
+@import "breakpoint";
+
+// BP Settings
+$breakpoint-to-ems: true;
+
+// BP Vars
+$bp-sm: 500px;
+
+// Sizing Module
+// =============
+
+$headings: (
+  h1: (
+    $ms-xxxlrg,
+    $ms-smscr-xxxlrg
+  ),
+  h2: (
+    $ms-xxlrg,
+    $ms-smscr-xxlrg
+  ),
+  h3: (
+    $ms-xlrg,
+    $ms-smscr-xlrg
+  ),
+  h4: (
+    $ms-lrg,
+    $ms-smscr-lrg
+  ),
+  h5:  (
+    $ms-med,
+    $ms-smscr-med
+  ),
+  h6:  (
+    $ms-norm,
+    $ms-smscr-norm
+  )
+);
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+@each $heading, $size in $headings {
+  #{$heading} {
+    @include adjust-font-size-to( nth($size, 2) );
+    
+    @include breakpoint($bp-sm) {
+      @include adjust-font-size-to( nth($size, 1) );
+    }
+  }
+}
+
+
+
+.wrap {
+	max-width: 600px;
+}
+
+
+

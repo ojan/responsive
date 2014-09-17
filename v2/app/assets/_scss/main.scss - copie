@@ -1,0 +1,65 @@
+// Screen
+// ======
+
+@import "grids";
+
+// https://github.com/Team-Sass/modular-scale
+@import "modular-scale";
+
+// http://compass-style.org/reference/compass/typography/vertical_rhythm/
+@import "compass/typography/vertical_rhythm";
+
+// http://breakpoint-sass.com/
+@import "breakpoint";
+
+$ms-base: 1em;
+$ms-ratio: $golden;
+
+$base-font-size: 20px;
+$base-line-height: 30px;
+
+
+// create $breakpoint variables like so
+// assume min-width (by default) if only a number
+$breakpoint-medium-width: 1000px;
+$breakpoint-medium-width-em: 30em;
+// set min-width/max-width if both values are numbers
+$breakpoint-medium-not-wide: 500px 700px;
+// set min/max of feature if there are two numbers
+$breakpoint-medium-height: height 300px 700px;
+// if one value is a string, assume a feature/value pair
+$breakpoint-kind-of-wide: min-width 700px;
+$breakpoint-not-too-wide: max-width 700px;
+// for multidimensional lists, assume each item is a feature value pair
+$breakpoint-wide-portrait: (max-width 700px) (orientation portrait);
+// handle one-sided features (ie. monochrome)
+$breakpoint-wide-portrait-mono: (max-width 700px) (orientation portrait) (monochrome);
+$breakpoint-mono: monochrome;
+$breakpoint-hi-rez: min-resolution 1.5dppx;
+
+html { font-size:100%; } 
+
+body {
+}
+
+.wrap {
+  @include container(740px);
+}
+
+.content {
+  @include span(6 of 12);
+  @media (min-width: 980px) {
+    @include span(8 of 12);         
+  }
+}
+ 
+.sidebar {
+  @include span(6 of 12);
+  @media (min-width: 980px) {
+    @include span(4 of 12);
+  }
+}
+
+@media (max-width: 640px) { body {font-size:1.0rem;} } @media (min-width: 640px) { body {font-size:1.1rem;} } @media (min-width:960px) { body {font-size:1.2rem;} } @media (min-width:1100px) { body {font-size:1.5rem;} } 
+
+@media (min-width: 950px) { .container {width:675px;} } 

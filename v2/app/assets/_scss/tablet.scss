@@ -1,0 +1,40 @@
+// https://github.com/Pushplaybang/knife
+@import "../../_bower_components/knife/examples/normalize";
+@import "../../_bower_components/knife/knife";
+
+/* Type Setup */
+$body-font-size:    16px;
+$body-line-height:  $perfect-fifth;
+$scale-factor:      $perfect-fourth;
+$ie8compatability:  true;
+ 
+html { @include khtml(); }
+body { @include kbody(); }
+
+/* Typography */
+h1,h2,h3,h4,h5,h6 {font-family: serif;}
+h1 { @include ktype(3, 1, 2); }
+h2 { @include ktype(2, 2, 1); }
+h3 { @include ktype(1, 1, 1); }
+h1,
+h2
+	{
+	text-transform: capitalize;
+}
+h4,
+h5,
+h6 { 
+    @include ktype(0, 1, 0);
+    text-transform: uppercase;
+}
+p, ul, ol,dl {@include ktype(0,0,1);}
+small { 
+  display: inline-block;
+  @include ktype(-1,0,0); 
+}
+
+.wrap {
+  max-width: 650px;
+  margin: 0 auto;
+  font-family: sans-serif;
+}

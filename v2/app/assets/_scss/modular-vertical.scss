@@ -1,0 +1,59 @@
+@import "modular-scale";
+@import "compass/typography/vertical_rhythm";
+
+// Using the Modular Scale plugin along with Compass Vertical Rhythms module.
+// The goal is to use MS to give us the values,
+// and use VR to apply those values to our typography.
+
+// ---------------------------------------------------------------------------
+// Defaults
+
+$base-size: 16px;
+$ratio: major-third() fifth();
+
+// ---------------------------------------------------------------------------
+// Variants
+
+$normpx       : $base-size;
+$medpx        : ms(1);
+$smallpx      : ms(-1);
+$xsmallpx     : ms(-2);
+$xxsmallpx    : ms(-3);
+$xxxsmallpx   : ms(-4);
+$largepx      : ms(2);
+$xlargepx     : ms(3);
+$xxlargepx    : ms(5);
+$xxxlargepx   : ms(8);
+
+// ---------------------------------------------------------------------------
+// type
+
+$base-font-size    : $normpx;
+$base-line-height  : $medpx;
+
+// ---------------------------------------------------------------------------
+// Usage
+
+@include establish-baseline;
+
+h1 { @include adjust-font-size-to($largepx); }
+h2 { @include adjust-font-size-to($medpx); }
+
+// create more semantic variables where it makes sense...
+$nav-font-size : $smallpx;
+
+.nav {
+  @include adjust-font-size-to($nav-font-size);
+  @include trailer(1, $nav-font-size);
+}
+
+// or use modular-scale to create unique variables...
+$banner-font-size: ms(6);
+
+[role="banner"] {
+  @include adjust-font-size-to($banner-font-size);
+  @include rhythm(1, 2, 2, 1, $banner-font-size);
+}
+
+// or even more directly...
+[role="contentinfo"] { @include adjust-font-size-to(ms(-1)); }
